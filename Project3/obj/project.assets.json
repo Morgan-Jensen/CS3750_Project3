@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MorganJensen\\source\\repos\\Project3\\Project3\\Project3.csproj",
+      "projectUniqueName": "C:\\Users\\MorganJensen\\Documents\\GitHub\\Project3\\Project3\\Project3.csproj",
       "projectName": "Project3",
-      "projectPath": "C:\\Users\\MorganJensen\\source\\repos\\Project3\\Project3\\Project3.csproj",
+      "projectPath": "C:\\Users\\MorganJensen\\Documents\\GitHub\\Project3\\Project3\\Project3.csproj",
       "packagesPath": "C:\\Users\\MorganJensen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MorganJensen\\source\\repos\\Project3\\Project3\\obj\\",
+      "outputPath": "C:\\Users\\MorganJensen\\Documents\\GitHub\\Project3\\Project3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
