@@ -3,10 +3,20 @@
 
 // Write your Javascript code.
 
+var name;
+
+var groupsCollection;
+
+var group = new function () {
+	
+}
 
 // connect to signalr
 var connection = new signalR.HubConnectionBuilder().withUrl("/groupHub").build();
-connection.start();
+connection.start().then(function () {
+	name = prompt("Please enter your name:");
+});
+
 
 $("#sendButton").on("click", function () {
 	connection.invoke("AttemptMethod", array).catch(function (err) {
@@ -19,3 +29,9 @@ connection.on("writeToPage", function (messages) {
 });
 
 var array = ["one", "two", "three"]
+
+
+$("#newItem").on("click", function () {
+	console.log(name);
+})
+
