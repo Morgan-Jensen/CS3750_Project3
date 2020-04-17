@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="listGroups()">
 
     <div class="jumbotron text-center">
         <div class="container">
@@ -21,60 +21,59 @@
                 <p>
                     <label for="Group">Groups:</label>
 
-                    <select id="groups">
-                        <option value="group1">Group1</option>
-                        <option value="group2">Group2</option>
-                        <option value="group3">Group3</option>
-                        <option value="group4">Group4</option>
+                    <select id="mydropdown">
+                        
                     </select>
                 </p>
 
             </div>
             <div class="col-sm-4">
                 <p>Add new item <button type="button">+</button></p>
+                <p>Add new group <button type="button" onclick="">+</button></p>
 
 
             </div>
         </div>
     </div>
 
+    <script>
+        var title = ["Group1", "Group2", "Group3"]; // Possible Values
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Item Object1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Item Object2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Item Object3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Item Object4</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Item Object5</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Item Object6</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-        </div>
-    </div>
+        function listGroups() {
+            //var title = new Array("Group1", "Group2", "Group3"); // Possible Values
+            //var title = ["Group1", "Group2", "Group3"]; // Possible Values
+            var sel = document.getElementById('mydropdown') // find the drop down
+            for (var i in title) { // loop through all elements
+                var opt = document.createElement("option"); // Create the new element
+                opt.value = title[i]; // set the value
+                opt.text = title[i]; // set the text
+                sel.appendChild(opt); // add it to the select
+            }
+        }
+
+//function addGroup(){
+//var text = "";
+//var i;
+//var j;
+
+//if(title[0] != "Group1"){
+//  	j =1;
+//  }
+//  else if(title[1] != "Group2"){
+//  	j =2;
+//  }
+//  else if(title[2] != "Group3"){
+//  	j =3;
+//  }
+//  else if(title[3] != "Group4"){
+     // 	j =4;
+     // }
+
+//title[title.length] ="Group"+j;
+
+//}
+    </script>
+
 
 </body>
 </html>
