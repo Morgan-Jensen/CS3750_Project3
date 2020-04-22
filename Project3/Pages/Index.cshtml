@@ -38,14 +38,14 @@
         </div>
         <center>
             <div class="container">
-                <textarea rows=8 cols=21 wrap="virtual" name="text00"></textarea>
-                <textarea rows=8 cols=21 wrap="virtual" name="text01"></textarea>
-                <textarea rows=8 cols=21 wrap="virtual" name="text02"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text00" onChange="updateText()"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text01" onChange="updateText()"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text02" onChange="updateText()"></textarea>
             </div>
             <div class="container">
-                <textarea rows=8 cols=21 wrap="virtual" name="text10"></textarea>
-                <textarea rows=8 cols=21 wrap="virtual" name="text11"></textarea>
-                <textarea rows=8 cols=21 wrap="virtual" name="text12"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text10" onChange="updateText()"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text11" onChange="updateText()"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text12" onChange="updateText()"></textarea>
             </div>
         </center>
         </form>
@@ -55,13 +55,8 @@
             //the combobox to populating items.
             var title = ["Group1", "Group2", "Group3"]; // Possible Values
             var shortcut = document.combowithtext;
-            var descriptions = ["Item - blah blah blah"];
-           // descriptions[0] = "Item 1 blah blah blah";
-           // descriptions[1] = "Item 2 blah blah blah";
-           // descriptions[2] = "Item 3 blah blah blah";
-           // descriptions[3] = "Item 4 blah blah blah";
-           // descriptions[4] = "Item 5 blah blah blah";
-           // descriptions[5] = "Item 6 blah blah blah";
+            var descriptions = [];
+           
 
 
             function listGroups() {
@@ -110,6 +105,46 @@
                 shortcut.text10.value = descriptions[3];
                 shortcut.text11.value = descriptions[4];
                 shortcut.text12.value = descriptions[5];
+
+            }
+
+            function updateText() {
+                if (descriptions[0] != null) {
+                    descriptions[0] = shortcut.text00.value;
+                }
+                else {
+                    shortcut.text00.value = "Error. No item here to edit.";
+                }
+                if (descriptions[1] != null) {
+                    descriptions[1] = shortcut.text01.value;
+                }
+                else {
+                    shortcut.text01.value = "Error. No item here to edit.";
+                }
+                if (descriptions[2] != null) {
+                    descriptions[2] = shortcut.text02.value;
+                }
+                else {
+                    shortcut.text02.value = "Error. No item here to edit.";
+                }
+                if (descriptions[3] != null) {
+                    descriptions[3] = shortcut.text10.value;
+                }
+                else {
+                    shortcut.text10.value = "Error. No item here to edit.";
+                }
+                if (descriptions[4] != null) {
+                    descriptions[4] = shortcut.text11.value;
+                }
+                else {
+                    shortcut.text11.value = "Error. No item here to edit.";
+                }
+                if (descriptions[5] != null) {
+                    descriptions[5] = shortcut.text12.value;
+                }
+                else {
+                    shortcut.text12.value = "Error. No item here to edit.";
+                }
 
             }
 
