@@ -1,105 +1,120 @@
 ﻿@page
 @model IndexModel
 @{
-	ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home page";
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Project 3</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Project 3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body onload="listGroups()">
-	<form name="combowithtext">
+    <form name="combowithtext">
 
-		<div class="jumbotron text-center">
-			<div class="container">
-				<div class="col-sm-4">
-					<p>
-						<label for="Group">Groups:</label>
+        <div class="jumbotron text-center">
+            <div class="container">
+                <div class="col-sm-4">
+                    <p>
+                        <label for="Group">Groups:</label>
 
-						<select id="mydropdown" onChange="showtext()">
-						</select>
-					</p>
+                        <select id="mydropdown" onChange="showtext()">
+                        </select>
+                    </p>
 
-				</div>
-				<div class="col-sm-4">
-					<p>Add new item <button type="button" onclick="addItem()">+</button></p>
-					<p>Add new group <button type="button" id="newGroupButton">+</button></p>
-
-				</div>
-			</div>
-		</div>
-		<center>
-			<div class="container">
-				<textarea rows=8 cols=21 wrap="virtual" name="text00"></textarea>
-				<textarea rows=8 cols=21 wrap="virtual" name="text01"></textarea>
-				<textarea rows=8 cols=21 wrap="virtual" name="text02"></textarea>
-			</div>
-			<div class="container">
-				<textarea rows=8 cols=21 wrap="virtual" name="text10"></textarea>
-				<textarea rows=8 cols=21 wrap="virtual" name="text11"></textarea>
-				<textarea rows=8 cols=21 wrap="virtual" name="text12"></textarea>
-			</div>
-		</center>
-	</form>
-	<p id="demo"></p>
-	<script>
-		//http://www.javascriptkit.com/script/script2/combodescrip1.shtml used to help give us an idea of the boxes for
-		//the combobox to populating items.
-		var title = ["Group1", "Group2", "Group3"]; // Possible Values
-		var shortcut = document.combowithtext;
-		var descriptions = ["Item - blah blah blah"];
-		// descriptions[0] = "Item 1 blah blah blah";
-		// descriptions[1] = "Item 2 blah blah blah";
-		// descriptions[2] = "Item 3 blah blah blah";
-		// descriptions[3] = "Item 4 blah blah blah";
-		// descriptions[4] = "Item 5 blah blah blah";
-		// descriptions[5] = "Item 6 blah blah blah";
+                </div>
+                <div class="col-sm-4">
+                    <p>Add new item <button type="button" onclick="addItem()">+</button></p>
+                    <p>Add new group <button type="button" onclick="addGroup()">+</button></p>
 
 
-		function listGroups() {
-			var sel = document.getElementById('mydropdown') // find the drop down
-			for (var i in title) { // loop through all elements
-				var opt = document.createElement("option"); // Create the new element
-				opt.value = title[i]; // set the value
-				opt.text = title[i]; // set the text
-				sel.appendChild(opt); // add it to the select
-			}
-		}
+                </div>
+            </div>
+        </div>
+        <center>
+            <div class="container">
+                <textarea rows=8 cols=21 wrap="virtual" name="text00"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text01"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text02"></textarea>
+            </div>
+            <div class="container">
+                <textarea rows=8 cols=21 wrap="virtual" name="text10"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text11"></textarea>
+                <textarea rows=8 cols=21 wrap="virtual" name="text12"></textarea>
+            </div>
+        </center>
+        </form>
+        <p id="demo"></p>
+        <script>
+            //http://www.javascriptkit.com/script/script2/combodescrip1.shtml used to help give us an idea of the boxes for
+            //the combobox to populating items.
+            var title = ["Group1", "Group2", "Group3"]; // Possible Values
+            var shortcut = document.combowithtext;
+            var descriptions = ["Item - blah blah blah"];
+           // descriptions[0] = "Item 1 blah blah blah";
+           // descriptions[1] = "Item 2 blah blah blah";
+           // descriptions[2] = "Item 3 blah blah blah";
+           // descriptions[3] = "Item 4 blah blah blah";
+           // descriptions[4] = "Item 5 blah blah blah";
+           // descriptions[5] = "Item 6 blah blah blah";
 
 
-		function addItem() {
-			var grpForItem = title[shortcut.mydropdown.selectedIndex];
+            function listGroups() {
+                var sel = document.getElementById('mydropdown') // find the drop down
+                for (var i in title) { // loop through all elements
+                    var opt = document.createElement("option"); // Create the new element
+                    opt.value = title[i]; // set the value
+                    opt.text = title[i]; // set the text
+                    sel.appendChild(opt); // add it to the select
+                }
+            }
 
-			var i = descriptions.length + 1;
-			descriptions[descriptions.length] = grpForItem + " Item " + i + " description...";
-			shortcut.text00.value = descriptions[0];
-			shortcut.text01.value = descriptions[1];
-			shortcut.text02.value = descriptions[2];
-			shortcut.text10.value = descriptions[3];
-			shortcut.text11.value = descriptions[4];
-			shortcut.text12.value = descriptions[5];
-
-		}
-
-		function showtext() {
-			shortcut.text00.value = descriptions[0];
-			shortcut.text01.value = descriptions[1];
-			shortcut.text02.value = descriptions[2];
-			shortcut.text10.value = descriptions[3];
-			shortcut.text11.value = descriptions[4];
-			shortcut.text12.value = descriptions[5];
-
-		}
+            function addGroup() {
+                var sel = document.getElementById('mydropdown') // find the drop down
+                var length = sel.options.length;
+                for (i = length - 1; i >= 0; i--) {
+                    sel.options[i] = null;
+                }
 
 
-	</script>
+                var i = title.length + 1;
+                title[title.length] = "Group" + i;
+                listGroups();
+                //document.getElementById("demo").innerHTML = length;
+
+            }
+
+            function addItem() {
+                var grpForItem = title[shortcut.mydropdown.selectedIndex];
+
+                var i = descriptions.length + 1;
+                descriptions[descriptions.length] = grpForItem + " Item " + i + " description...";
+                shortcut.text00.value = descriptions[0];
+                shortcut.text01.value = descriptions[1];
+                shortcut.text02.value = descriptions[2];
+                shortcut.text10.value = descriptions[3];
+                shortcut.text11.value = descriptions[4];
+                shortcut.text12.value = descriptions[5];
+
+            }
+
+            function showtext() {
+                shortcut.text00.value = descriptions[0];
+                shortcut.text01.value = descriptions[1];
+                shortcut.text02.value = descriptions[2];
+                shortcut.text10.value = descriptions[3];
+                shortcut.text11.value = descriptions[4];
+                shortcut.text12.value = descriptions[5];
+
+            }
+
+
+        </script>
 
 
 </body>
