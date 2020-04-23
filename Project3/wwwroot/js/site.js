@@ -4,34 +4,48 @@
 // Write your Javascript code.
 
 var name;
-
-var groupsCollection;
-
-var group = new function () {
-	
-}
+var length;
 
 // connect to signalr
 var connection = new signalR.HubConnectionBuilder().withUrl("/groupHub").build();
 connection.start().then(function () {
 	name = prompt("Please enter your name:");
+	connection.invoke("FindGroupLength");
+});
+
+connection.on("setGroupLength", function (newLength) {
+	length = newLength;
 });
 
 
-$("#sendButton").on("click", function () {
-	connection.invoke("AttemptMethod", array).catch(function (err) {
+$("#newGroupButton").on("click", function () {
+	connection.invoke("CreateNewGroup").catch(function (err) {
 		return console.error(err.toString());
 	})
-});
-
-connection.on("writeToPage", function (messages) {
-	alert(messages);
-});
-
-var array = ["one", "two", "three"]
-
-
-$("#newItem").on("click", function () {
-	console.log(name);
 })
+
+//function addGroup() {
+//	var sel = document.getElementById('mydropdown') // find the drop down
+//	var length = sel.options.length;
+//	for (i = length - 1; i >= 0; i--) {
+//		sel.options[i] = null;
+//	}
+//	var i = title.length + 1;
+//	title[title.length] = "Group" + i;
+//	listGroups();
+//	//document.getElementById("demo").innerHTML = length;
+//}
+
+
+connection.on("createGroup", function () {
+	var sel = document.getElementById('mydropdown') // find the drop down
+	//var length = sel.options.length;
+	connection.invoke("FindGroupLength");
+	for (i = length - 1; i >= 0; i--) {
+		sel.options[i] = null;
+	}
+	var i = title.length + 1;
+	title[title.length] = "Group" + i;
+	listGroups();
+});
 

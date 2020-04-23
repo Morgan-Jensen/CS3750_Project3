@@ -7,14 +7,15 @@ namespace Project3.Hubs
 {
 	public class GroupHub : Hub
 	{
-		public async Task SendGroups(string content)
+		public async Task CreateNewGroup()
 		{
-			await Clients.All.SendAsync("RecieveGroups", Server.Server.ManageGroups(content));
+			Server.Server.IncreaseCount();
+			await Clients.All.SendAsync("createGroup");
 		}
 
-		public async Task AttemptMethod(ArrayList messages)
+		public async Task FindGroupLength()
 		{
-			await Clients.All.SendAsync("writeToPage", messages);
+			await Clients.All.SendAsync("setGroupLength", Server.Server.GetGroupCount());
 		}
 	}
 }
