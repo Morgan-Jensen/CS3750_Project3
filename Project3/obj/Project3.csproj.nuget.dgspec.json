@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ComputerScience\\CS3750\\Project3\\CS3750_Project3\\Project3\\Project3.csproj": {}
+    "C:\\ComputerScience\\CS3750\\P3Attempt1\\CS3750_Project3\\Project3\\Project3.csproj": {}
   },
   "projects": {
-    "C:\\ComputerScience\\CS3750\\Project3\\CS3750_Project3\\Project3\\Project3.csproj": {
+    "C:\\ComputerScience\\CS3750\\P3Attempt1\\CS3750_Project3\\Project3\\Project3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ComputerScience\\CS3750\\Project3\\CS3750_Project3\\Project3\\Project3.csproj",
+        "projectUniqueName": "C:\\ComputerScience\\CS3750\\P3Attempt1\\CS3750_Project3\\Project3\\Project3.csproj",
         "projectName": "Project3",
-        "projectPath": "C:\\ComputerScience\\CS3750\\Project3\\CS3750_Project3\\Project3\\Project3.csproj",
+        "projectPath": "C:\\ComputerScience\\CS3750\\P3Attempt1\\CS3750_Project3\\Project3\\Project3.csproj",
         "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-        "outputPath": "C:\\ComputerScience\\CS3750\\Project3\\CS3750_Project3\\Project3\\obj\\",
+        "outputPath": "C:\\ComputerScience\\CS3750\\P3Attempt1\\CS3750_Project3\\Project3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
