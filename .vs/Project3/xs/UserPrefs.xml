@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{AD9C43B5-E9D3-45EA-9D8E-92FEC0D84654}|Default">
+  <MonoDevelop.Ide.ItemProperties.Project3 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project3/Server/Server.cs">
+    <Files>
+      <File FileName="Project3/Pages/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Project3/Pages/Index.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Project3/wwwroot/js/site.js" Line="1" Column="1" />
+      <File FileName="Project3/Hubs/GroupHub.cs" Line="1" Column="1" />
+      <File FileName="Project3/Server/Server.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project3" expanded="True">
+            <Node name="Project3" expanded="True">
+              <Node name="Hubs" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Index.cshtml" expanded="True" />
+              </Node>
+              <Node name="Server" expanded="True">
+                <Node name="Server.cs" selected="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="js" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -8,26 +8,28 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Brad\\.nuget\\packages\\": {}
+    "/Users/jacobgonzo/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brad\\Documents\\WSU\\CS 3750 Software Engineering\\2020 spring projects\\CS3750_Project3\\Project3\\Project3.csproj",
+      "projectUniqueName": "/Users/jacobgonzo/Documents/GitHub/CS3750_Project3/Project3/Project3.csproj",
       "projectName": "Project3",
-      "projectPath": "C:\\Users\\Brad\\Documents\\WSU\\CS 3750 Software Engineering\\2020 spring projects\\CS3750_Project3\\Project3\\Project3.csproj",
-      "packagesPath": "C:\\Users\\Brad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brad\\Documents\\WSU\\CS 3750 Software Engineering\\2020 spring projects\\CS3750_Project3\\Project3\\obj\\",
+      "projectPath": "/Users/jacobgonzo/Documents/GitHub/CS3750_Project3/Project3/Project3.csproj",
+      "packagesPath": "/Users/jacobgonzo/.nuget/packages/",
+      "outputPath": "/Users/jacobgonzo/Documents/GitHub/CS3750_Project3/Project3/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Brad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jacobgonzo/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -61,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
       }
     }
   }
