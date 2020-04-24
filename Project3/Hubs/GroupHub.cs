@@ -9,13 +9,12 @@ namespace Project3.Hubs
 	{
 		public async Task CreateNewGroup()
 		{
-			Server.Server.IncreaseCount();
 			await Clients.All.SendAsync("createGroup");
 		}
 
-		public async Task FindGroupLength()
+		public async Task CreateNewItem()
 		{
-			await Clients.All.SendAsync("setGroupLength", Server.Server.GetGroupCount());
+			await Clients.All.SendAsync("createItem");
 		}
 	}
 }

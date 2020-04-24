@@ -24,28 +24,30 @@ $("#newGroupButton").on("click", function () {
 	})
 })
 
-//function addGroup() {
-//	var sel = document.getElementById('mydropdown') // find the drop down
-//	var length = sel.options.length;
-//	for (i = length - 1; i >= 0; i--) {
-//		sel.options[i] = null;
-//	}
-//	var i = title.length + 1;
-//	title[title.length] = "Group" + i;
-//	listGroups();
-//	//document.getElementById("demo").innerHTML = length;
-//}
-
 
 connection.on("createGroup", function () {
 	var sel = document.getElementById('mydropdown') // find the drop down
-	//var length = sel.options.length;
-	connection.invoke("FindGroupLength");
+	var length = sel.options.length;
 	for (i = length - 1; i >= 0; i--) {
 		sel.options[i] = null;
 	}
+
 	var i = title.length + 1;
 	title[title.length] = "Group" + i;
 	listGroups();
 });
 
+$('#newItemButton').on("click", function () {
+	connection.invoke("CreateNewItem").catch(function (err) {
+		return console.error(err.toString());
+	});
+});
+
+connection.on("createItem", function () {
+	var grpForItem = title[shortcut.mydropdown.selectedIndex];
+
+	var i = descriptions.length + 1;
+	descriptions[descriptions.length] = grpForItem + ", Item " + i + " description...";
+
+	showtext();
+});
