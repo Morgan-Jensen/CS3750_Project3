@@ -16,7 +16,7 @@ connection.start().then(function () {
 function updateText() {
 	var grpForItem = title[shortcut.mydropdown.selectedIndex];
 
-	connection.invoke("ItemUpdated").catch(function (err) {
+	connection.invoke("ItemUpdated", grpForItem).catch(function (err) {
 		return console.error(err.toString());
 	});
 
@@ -59,8 +59,8 @@ function updateText() {
 
 }
 
-connection.on("receiveNewItems", function (someValue) {
-	alert(someValue);	
+connection.on("receiveUpdatedItemInfo", function (updatedItemInfo) {
+	alert("Woohoo, I received this updateItem message from server:" + updatedItemInfo);	
 });
 
 connection.on("setGroupLength", function (newLength) {

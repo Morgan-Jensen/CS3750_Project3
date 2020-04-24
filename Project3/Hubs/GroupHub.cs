@@ -20,9 +20,9 @@ namespace Project3.Hubs
 			await Clients.All.SendAsync("createItem");
 		}
 
-		public async Task ItemUpdated()
+		public async Task ItemUpdated(string updatedItemInfo)
 		{
-			await Clients.All.SendAsync("receiveNewItems", "42");
+			await Clients.All.SendAsync("receiveUpdatedItemInfo", updatedItemInfo);
 		}
 
 	}
