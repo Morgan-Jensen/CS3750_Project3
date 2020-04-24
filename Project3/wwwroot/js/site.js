@@ -10,7 +10,57 @@ var length;
 var connection = new signalR.HubConnectionBuilder().withUrl("/groupHub").build();
 connection.start().then(function () {
 	name = prompt("Please enter your name:");
-	connection.invoke("FindGroupLength");
+});
+
+
+function updateText() {
+	var grpForItem = title[shortcut.mydropdown.selectedIndex];
+
+	connection.invoke("ItemUpdated").catch(function (err) {
+		return console.error(err.toString());
+	});
+
+	if (shortcut.text00.value != "null" || shortcut.text00.value != "undefined") {
+		descriptions[currentGroupItemDescNum[0]] = grpForItem + ", " + shortcut.text00.value;
+	}
+	else {
+		shortcut.text00.value = "Error. No item here to edit.";
+	}
+	if (shortcut.text01.value != "null" || shortcut.text01.value != "undefined") {
+		descriptions[currentGroupItemDescNum[1]] = grpForItem + ", " + shortcut.text01.value;
+	}
+	else {
+		shortcut.text01.value = "Error. No item here to edit.";
+	}
+	if (shortcut.text02.value != "null" || shortcut.text02.value != "undefined") {
+		descriptions[currentGroupItemDescNum[2]] = grpForItem + ", " + shortcut.text02.value;
+	}
+	else {
+		shortcut.text02.value = "Error. No item here to edit.";
+	}
+	if (shortcut.text10.value != "null" || shortcut.text10.value != "undefined") {
+		descriptions[currentGroupItemDescNum[3]] = grpForItem + ", " + shortcut.text10.value;
+	}
+	else {
+		shortcut.text10.value = "Error. No item here to edit.";
+	}
+	if (shortcut.text11.value != "null" || shortcut.text11.value != "undefined") {
+		descriptions[currentGroupItemDescNum[4]] = grpForItem + ", " + shortcut.text11.value;
+	}
+	else {
+		shortcut.text11.value = "Error. No item here to edit.";
+	}
+	if (shortcut.text12.value != "null" || shortcut.text12.value != "undefined") {
+		descriptions[currentGroupItemDescNum[5]] = grpForItem + ", " + shortcut.text12.value;
+	}
+	else {
+		shortcut.text12.value = "Error. No item here to edit.";
+	}
+
+}
+
+connection.on("receiveNewItems", function (someValue) {
+	alert(someValue);	
 });
 
 connection.on("setGroupLength", function (newLength) {

@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using Project3.Server;
 using System.Collections;
-using Project3.Pages.IndexModel;
+//using Project3.Pages.IndexModel;
 
 namespace Project3.Hubs
 {
 	public class GroupHub : Hub
 	{
-		public static string name = IndexModel.user;
+		//public static string name = IndexModel.user;
 
 		public async Task CreateNewGroup()
 		{
@@ -19,5 +19,11 @@ namespace Project3.Hubs
 		{
 			await Clients.All.SendAsync("createItem");
 		}
+
+		public async Task ItemUpdated()
+		{
+			await Clients.All.SendAsync("receiveNewItems", "42");
+		}
+
 	}
 }
